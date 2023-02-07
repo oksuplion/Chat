@@ -9,7 +9,7 @@ import onError from "./utils/onError.js"
 import { addUser, findUser, getRoomUsers, removeUser } from "./users.js";
 
 const app = express();
-const PORT = 5000;
+const PORT = 7120;
 
 app.use(cors({ origin: "*" }));
 app.use(route);
@@ -38,7 +38,7 @@ io.on("connection", (socket) => {
 
 	const { name, room } = socket.handshake.query;
 
-	
+
 	socket.on("join", ({ name, room }) => {
 		socket.join(room);
 
